@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentDiary
+namespace _17th_lesson
 {
     class Diary
     {
@@ -20,7 +20,7 @@ namespace StudentDiary
         public static float maxGrade = 10;
         public static long count = 0;
 
-        public string Name;
+
 
         internal DiaryStatistics ComputeStatistics()
         {
@@ -83,7 +83,6 @@ namespace StudentDiary
         //    return ratings.Min();
 
         //}
-
 
 
     }

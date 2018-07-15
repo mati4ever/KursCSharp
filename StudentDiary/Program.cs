@@ -8,16 +8,26 @@ namespace StudentDiary
 {
     class Program
     {
+        static void GiveName(ref Diary diary)
+        {
+
+            diary.Name = "Matthew diary.";
+
+        }
+
+        static void IncrementNumber(out int number)
+        {
+            number = 42;
+        }
+
         static void Main(string[] args)
         {
-            Diary diary = new Diary();
-
-            diary.AddRating(5);
-            diary.AddRating(8.5f);
-            diary.AddRating(4.7f);
+            // PassByValueAndRef();
 
 
-            DiaryStatistics stats = diary.ComputeStatistics();
+
+
+
 
 
 
@@ -52,9 +62,9 @@ namespace StudentDiary
 
             //}
 
-            Console.WriteLine("Your average is: " + stats.averageGrade);
-            Console.WriteLine("Your highest rating is: " + stats.maxGrade);
-            Console.WriteLine("Your lowewst rating is: " + stats.minGrade);
+            //Console.WriteLine("Your average is: " + stats.averageGrade);
+            //Console.WriteLine("Your highest rating is: " + stats.maxGrade);
+            //Console.WriteLine("Your lowewst rating is: " + stats.minGrade);
 
             Console.ReadKey();
 
@@ -62,6 +72,29 @@ namespace StudentDiary
 
         }
 
+        private static void PassByValueAndRef()
+        {
+            Diary diary = new Diary();
+
+            diary.AddRating(5);
+            diary.AddRating(8.5f);
+            diary.AddRating(4.7f);
+
+            //Console.WriteLine(Diary.maxGrade);
+
+            Diary diary2 = new Diary();
+            Diary diary3 = diary2;
+            Diary diary4 = new Diary();
+            Diary diary5 = new Diary();
+
+            GiveName(ref diary2);
+
+            Console.WriteLine(diary3.Name);
+
+            Console.WriteLine(Diary.count);
+
+           
+        }
     }
 }
  
