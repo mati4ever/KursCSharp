@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentDiary
 {
-    class Diary
+    public class Diary
     {
         public Diary()
         {
@@ -22,7 +22,7 @@ namespace StudentDiary
 
         public string Name;
 
-        internal DiaryStatistics ComputeStatistics()
+        public DiaryStatistics ComputeStatistics()
         {
             DiaryStatistics stats = new DiaryStatistics();
 
