@@ -12,26 +12,56 @@ namespace Members
         {
 
             Diary diary = new Diary();
-            diary.AddRating(8.5f);
-            diary.AddRating(5f);
-            diary.AddRating(3.5f);
+            //diary.AddRating(8.5f);
+            //diary.AddRating(5f);
+            //diary.AddRating(3.5f);
 
-            DiaryStatistics stats = diary.ComputeStatistics();
+            //DiaryStatistics stats = diary.ComputeStatistics();
 
-            //WriteResult("Average", stats.averageGrade, 5,7,8);
-            //WriteResult("Highest rating", (int)stats.maxGrade);
-            //WriteResult("Lowest rating" , (long)stats.minGrade);
-            //WriteResult("TEST", stats.minGrade, 1);
+            ////WriteResult("Average", stats.averageGrade, 5,7,8);
+            ////WriteResult("Highest rating", (int)stats.maxGrade);
+            ////WriteResult("Lowest rating" , (long)stats.minGrade);
+            ////WriteResult("TEST", stats.minGrade, 1);
+
+
+            diary.NameChanged += new NameChangedDelegate(OnNameChange);
+            diary.NameChanged += new NameChangedDelegate(OnNameChange2);
+            diary.NameChanged += new NameChangedDelegate(OnNameChange3);
+            diary.NameChanged += new NameChangedDelegate(OnNameChange4);
 
             diary.Name = "Matthew diary.";
-            diary.Name = "";
-            diary.Name = null;
-            Console.WriteLine(diary.Name);
 
+            //diary.Name = "";
+            //diary.Name = null;
+           
 
+            diary.Name = "Anna diary.";
+            diary.Name = "Anna diary.";
+
+            Console.WriteLine($"Current diary name: {diary.Name}");
 
             Console.ReadKey();
 
+        }
+
+        private static void OnNameChange(string existingName, string newName)
+        {
+            Console.WriteLine($"Name change form: {existingName} to: { newName}");
+        }
+
+        private static void OnNameChange2(string existingName, string newName)
+        {
+            Console.WriteLine("*************************");
+        }
+
+        private static void OnNameChange3(string existingName, string newName)
+        {
+            Console.WriteLine("Name changed successful");
+        }
+
+        private static void OnNameChange4(string existingName, string newName)
+        {
+            Console.WriteLine("#########################");
         }
 
         private static void WriteResult(string description, params float[] result)

@@ -31,9 +31,20 @@ namespace Members
             }
             set
             {
-                if (!String.IsNullOrEmpty(value)) _name = value;
+                if (!String.IsNullOrEmpty(value))
+                {
+                    if (_name != value)
+                    {
+                       NameChanged(_name, value);
+
+                    }
+                    _name = value;
+                }
             }
         }
+
+        //Delegate
+        public NameChangedDelegate NameChanged;
 
         public DiaryStatistics ComputeStatistics()
         {
