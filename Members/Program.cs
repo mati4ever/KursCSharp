@@ -27,9 +27,11 @@ namespace Members
             diary.NameChanged += new NameChangedDelegate(OnNameChange);
             diary.NameChanged += new NameChangedDelegate(OnNameChange2);
             diary.NameChanged += new NameChangedDelegate(OnNameChange3);
-            diary.NameChanged += new NameChangedDelegate(OnNameChange4);
+            diary.NameChanged += OnNameChange4;
+            diary.NameChanged += OnNameChange4;
+            diary.NameChanged -= OnNameChange4;
 
-            diary.Name = "Matthew diary.";
+            diary.Name = "Matthew diary.";  
 
             //diary.Name = "";
             //diary.Name = null;
@@ -44,22 +46,22 @@ namespace Members
 
         }
 
-        private static void OnNameChange(string existingName, string newName)
+        private static void OnNameChange(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine($"Name change form: {existingName} to: { newName}");
+            Console.WriteLine($"Name change form: {args.ExistingName} to: {args.NewName}");
         }
 
-        private static void OnNameChange2(string existingName, string newName)
+        private static void OnNameChange2(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("*************************");
         }
 
-        private static void OnNameChange3(string existingName, string newName)
+        private static void OnNameChange3(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("Name changed successful");
         }
 
-        private static void OnNameChange4(string existingName, string newName)
+        private static void OnNameChange4( object sender, NameChangedEventArgs argse)
         {
             Console.WriteLine("#########################");
         }
