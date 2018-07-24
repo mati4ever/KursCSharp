@@ -18,10 +18,17 @@ namespace Members
 
             DiaryStatistics stats = diary.ComputeStatistics();
 
-            WriteResult("Average", stats.averageGrade, 5,7,8);
-            WriteResult("Highest rating", (int)stats.maxGrade);
-            WriteResult("Lowest rating" , (long)stats.minGrade);
-            WriteResult("TEST", stats.minGrade, 1);
+            //WriteResult("Average", stats.averageGrade, 5,7,8);
+            //WriteResult("Highest rating", (int)stats.maxGrade);
+            //WriteResult("Lowest rating" , (long)stats.minGrade);
+            //WriteResult("TEST", stats.minGrade, 1);
+
+            diary.Name = "Matthew diary.";
+            diary.Name = "";
+            diary.Name = null;
+            Console.WriteLine(diary.Name);
+
+
 
             Console.ReadKey();
 

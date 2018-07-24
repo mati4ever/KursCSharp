@@ -20,7 +20,20 @@ namespace Members
         public static float maxGrade = 10;
         public static long count = 0;
 
-        public string Name;
+
+        private string _name;
+
+        public string Name
+        {
+            get
+            {
+                return _name.ToUpper();
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value)) _name = value;
+            }
+        }
 
         public DiaryStatistics ComputeStatistics()
         {
