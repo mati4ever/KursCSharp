@@ -13,39 +13,105 @@ namespace FlowControl
 
         static void Main(string[] args)
         {
+            //instructioIf();
+            //InstructionSwitch();
 
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int a = 0; a < 3; a++)
+            //    {
+            //        Console.WriteLine($"Wartość i = : {i}, wartość a = : {a} ");
+            //    }
+
+            //}
+
+            //int i = 0;
+
+            //while (i < 3)
+            //{
+            //    Console.WriteLine("Hello.");
+            //    i++;
+            //}
+
+            //do
+            //{
+            //    Console.WriteLine("Hello.");
+            //    i++;
+            //} while (i > 3);
+
+            //int[] tab = {1,2,3,5,8,12,21};
+
+            //foreach (var item in tab)
+            //{
+
+            //    Console.WriteLine(item);
+
+            //}
+
+            for (; ; )
+            {
+                Console.WriteLine("Hello.");
+            }
+
+            Console.ReadKey();
+        }
+        #region Private methods
+
+        private static void InstructionSwitch()
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+
+
+            switch (name)
+            {
+                case "Mateusz":
+                    Method1();
+                    break;
+                case "Tomek":
+                    Method2();
+                    break;
+                case "Jacek":
+                    Method3();
+                    break;
+                default:
+                    Method4();
+                    break;
+            }
+        }
+
+        private static void instructioIf()
+        {
             Console.WriteLine("What is your age: ");
             age = int.Parse(Console.ReadLine());
 
             string test = age > 18 ? "Your are of legal age." : "You are a child.";
             Console.WriteLine(test);
 
-            //Console.WriteLine("What is your name?");
-            //name = Console.ReadLine();
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
 
 
-            //if (age <= 10)
-            //{
-            //    if (name == "Mateusz") 
-            //    {     
-            //        Method1();
-            //    }
+            if (age <= 10)
+            {
+                if (name == "Mateusz")
+                {
+                    Method1();
+                }
 
-            //}
-            //else if (age < 20)
-            //{
-            //    Method2();
-            //}
-            //else if (age <30)
-            //{
-            //    Method3();
-            //}
-            //else
-            //{
-            //    Method4();
-            //}
-
-            Console.ReadKey();
+            }
+            else if (age < 20)
+            {
+                Method2();
+            }
+            else if (age < 30)
+            {
+                Method3();
+            }
+            else
+            {
+                Method4();
+            }
         }
 
         private static void Method4()
@@ -68,5 +134,7 @@ namespace FlowControl
         {
             Console.WriteLine("Your age is 10 or lower.");
         }
+
+        #endregion
     }
 }
